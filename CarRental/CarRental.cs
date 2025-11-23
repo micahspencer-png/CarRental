@@ -13,9 +13,14 @@ namespace CarRental
             SetDefaults();
         }
 
-        void SetDefaults() 
-        { 
-            
+        void SetDefaults()
+        {
+
+        }
+
+        private void CalculateButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
