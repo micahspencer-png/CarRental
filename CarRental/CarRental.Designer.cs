@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            StateComboBox = new ComboBox();
             StateLabel = new Label();
             DaysLabel = new Label();
             DaysTextBox = new TextBox();
             CityLabel = new Label();
             EndOdometerLabel = new Label();
-            StateTextBox = new TextBox();
             AddressLabel = new Label();
             NameLabel = new Label();
             BeginOdometerLabel = new Label();
@@ -76,12 +76,12 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(StateComboBox);
             groupBox1.Controls.Add(StateLabel);
             groupBox1.Controls.Add(DaysLabel);
             groupBox1.Controls.Add(DaysTextBox);
             groupBox1.Controls.Add(CityLabel);
             groupBox1.Controls.Add(EndOdometerLabel);
-            groupBox1.Controls.Add(StateTextBox);
             groupBox1.Controls.Add(AddressLabel);
             groupBox1.Controls.Add(NameLabel);
             groupBox1.Controls.Add(BeginOdometerLabel);
@@ -98,6 +98,15 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Client Information";
+            // 
+            // StateComboBox
+            // 
+            StateComboBox.FormattingEnabled = true;
+            StateComboBox.Items.AddRange(new object[] { "", "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" });
+            StateComboBox.Location = new Point(294, 131);
+            StateComboBox.Name = "StateComboBox";
+            StateComboBox.Size = new Size(104, 28);
+            StateComboBox.TabIndex = 5;
             // 
             // StateLabel
             // 
@@ -123,7 +132,6 @@
             DaysTextBox.Name = "DaysTextBox";
             DaysTextBox.Size = new Size(92, 27);
             DaysTextBox.TabIndex = 7;
-            DaysTextBox.TextChanged += Text_Changed;
             // 
             // CityLabel
             // 
@@ -142,14 +150,6 @@
             EndOdometerLabel.Size = new Size(186, 20);
             EndOdometerLabel.TabIndex = 1;
             EndOdometerLabel.Text = "Ending Odometer Reading";
-            // 
-            // StateTextBox
-            // 
-            StateTextBox.Location = new Point(306, 131);
-            StateTextBox.Name = "StateTextBox";
-            StateTextBox.Size = new Size(92, 27);
-            StateTextBox.TabIndex = 3;
-            StateTextBox.TextChanged += Text_Changed;
             // 
             // AddressLabel
             // 
@@ -193,7 +193,6 @@
             ZipcodeTextBox.Name = "ZipcodeTextBox";
             ZipcodeTextBox.Size = new Size(92, 27);
             ZipcodeTextBox.TabIndex = 4;
-            ZipcodeTextBox.TextChanged += Text_Changed;
             // 
             // NameTextBox
             // 
@@ -201,7 +200,6 @@
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(202, 27);
             NameTextBox.TabIndex = 0;
-            NameTextBox.TextChanged += Text_Changed;
             // 
             // BeginOdometerTextBox
             // 
@@ -209,7 +207,6 @@
             BeginOdometerTextBox.Name = "BeginOdometerTextBox";
             BeginOdometerTextBox.Size = new Size(136, 27);
             BeginOdometerTextBox.TabIndex = 5;
-            BeginOdometerTextBox.TextChanged += Text_Changed;
             // 
             // EndOdometerTextBox
             // 
@@ -217,7 +214,6 @@
             EndOdometerTextBox.Name = "EndOdometerTextBox";
             EndOdometerTextBox.Size = new Size(136, 27);
             EndOdometerTextBox.TabIndex = 6;
-            EndOdometerTextBox.TextChanged += Text_Changed;
             // 
             // AddressTextBox
             // 
@@ -225,7 +221,6 @@
             AddressTextBox.Name = "AddressTextBox";
             AddressTextBox.Size = new Size(202, 27);
             AddressTextBox.TabIndex = 1;
-            AddressTextBox.TextChanged += Text_Changed;
             // 
             // CityTextBox
             // 
@@ -233,7 +228,6 @@
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(202, 27);
             CityTextBox.TabIndex = 2;
-            CityTextBox.TextChanged += Text_Changed;
             // 
             // groupBox2
             // 
@@ -493,7 +487,6 @@
         private Button SummaryButton;
         private Button CalculateButton;
         private TextBox DaysTextBox;
-        private TextBox StateTextBox;
         private TextBox ZipcodeTextBox;
         private TextBox NameTextBox;
         private TextBox BeginOdometerTextBox;
@@ -521,5 +514,6 @@
         private Label DailyChargeLabel;
         private Label MileageCostLabel;
         private Label DistanceLabel;
+        private ComboBox StateComboBox;
     }
 }
