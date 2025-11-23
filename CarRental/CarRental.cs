@@ -17,6 +17,7 @@ namespace CarRental
         int customers = 0;
         double miles = 0.00;
         double charges = 0.00;
+        double totalprice = 0.00;
         void SetDefaults()
         {
             NameTextBox.Text = "";
@@ -43,30 +44,68 @@ namespace CarRental
         void CalculateTotals() 
         {
             DailyCharge();
+            if (KmRadioButton.Checked == true) 
+            {
+                KilometersToMiles();
+            }
             MilageCharge();
             TotalDiscounts();
+            YouOweTextBox.Text = $"${totalprice}";
+        }
+        private double KilometersToMiles() 
+        { 
+            
         }
         void DailyCharge() 
-        { 
-        
+        {
+            double days = double.Parse(DaysTextBox.Text);
+            double dayscost = Math.Round((15.00 * days), 2);
+            totalprice += dayscost;
+            DailyChargeTextBox.Text = $"$ {dayscost}";
         }
         void MilageCharge() 
         { 
-        
+            int max = 0;
+            int min = 0;
+            int miles = 0;
+            double milescost = 0;
+            
+            max = int.Parse(EndOdometerTextBox.Text);
+            min = int.Parse(BeginOdometerTextBox.Text);
+            miles = max - min;
+
+            if (miles <= 200)
+            {
+                milescost = 0;
+            }
+            else if (201 <= miles && miles <= 500) 
+            {
+                milescost = miles * 0.12;
+            }
+            else if (miles > 500) 
+            {
+                milescost = miles * 0.10;
+            }
+                totalprice += milescost;
         }
         void TotalDiscounts() 
         {
-            AAADiscountAdd();
-            SeniorDiscountAdd();
+            double discount = 0;
+            double totalDiscount = 0;
+            if (AAADiscount.Checked == true) 
+            {
+                discount += 0.05;
+            }
+            if (SeniorDiscount.Checked == true) 
+            {
+                discount += 0.03;
+            }
+
+            totalDiscount = Math.Round((totalprice * discount),2);
+            
+            totalprice -= totalDiscount;
         }
-        void AAADiscountAdd() 
-        { 
         
-        }
-        void SeniorDiscountAdd() 
-        { 
-        
-        }
         void Summary() 
         { 
             

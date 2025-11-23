@@ -123,6 +123,7 @@
             DaysTextBox.Name = "DaysTextBox";
             DaysTextBox.Size = new Size(92, 27);
             DaysTextBox.TabIndex = 7;
+            DaysTextBox.TextChanged += Text_Changed;
             // 
             // CityLabel
             // 
@@ -148,6 +149,7 @@
             StateTextBox.Name = "StateTextBox";
             StateTextBox.Size = new Size(92, 27);
             StateTextBox.TabIndex = 3;
+            StateTextBox.TextChanged += Text_Changed;
             // 
             // AddressLabel
             // 
@@ -191,6 +193,7 @@
             ZipcodeTextBox.Name = "ZipcodeTextBox";
             ZipcodeTextBox.Size = new Size(92, 27);
             ZipcodeTextBox.TabIndex = 4;
+            ZipcodeTextBox.TextChanged += Text_Changed;
             // 
             // NameTextBox
             // 
@@ -198,6 +201,7 @@
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(202, 27);
             NameTextBox.TabIndex = 0;
+            NameTextBox.TextChanged += Text_Changed;
             // 
             // BeginOdometerTextBox
             // 
@@ -205,6 +209,7 @@
             BeginOdometerTextBox.Name = "BeginOdometerTextBox";
             BeginOdometerTextBox.Size = new Size(136, 27);
             BeginOdometerTextBox.TabIndex = 5;
+            BeginOdometerTextBox.TextChanged += Text_Changed;
             // 
             // EndOdometerTextBox
             // 
@@ -212,6 +217,7 @@
             EndOdometerTextBox.Name = "EndOdometerTextBox";
             EndOdometerTextBox.Size = new Size(136, 27);
             EndOdometerTextBox.TabIndex = 6;
+            EndOdometerTextBox.TextChanged += Text_Changed;
             // 
             // AddressTextBox
             // 
@@ -219,6 +225,7 @@
             AddressTextBox.Name = "AddressTextBox";
             AddressTextBox.Size = new Size(202, 27);
             AddressTextBox.TabIndex = 1;
+            AddressTextBox.TextChanged += Text_Changed;
             // 
             // CityTextBox
             // 
@@ -226,6 +233,7 @@
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(202, 27);
             CityTextBox.TabIndex = 2;
+            CityTextBox.TextChanged += Text_Changed;
             // 
             // groupBox2
             // 
