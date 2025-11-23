@@ -44,17 +44,14 @@ namespace CarRental
         void CalculateTotals() 
         {
             DailyCharge();
-            if (KmRadioButton.Checked == true) 
-            {
-                KilometersToMiles();
-            }
             MilageCharge();
             TotalDiscounts();
             YouOweTextBox.Text = $"${totalprice}";
         }
-        private double KilometersToMiles() 
-        { 
+        private double KilometersToMiles(double miles) 
+        {
             
+            return miles * 0.62;
         }
         void DailyCharge() 
         {
@@ -67,12 +64,16 @@ namespace CarRental
         { 
             int max = 0;
             int min = 0;
-            int miles = 0;
+            double miles = 0;
             double milescost = 0;
             
             max = int.Parse(EndOdometerTextBox.Text);
             min = int.Parse(BeginOdometerTextBox.Text);
             miles = max - min;
+            if (KmRadioButton.Checked == true)
+            {
+                KilometersToMiles(miles);
+            }
 
             if (miles <= 200)
             {
@@ -86,7 +87,10 @@ namespace CarRental
             {
                 milescost = miles * 0.10;
             }
-                totalprice += milescost;
+
+            TotalDistanceTextBox.Text = $"{miles} mi";
+            MileageCostTextBox.Text = $"${milescost}";
+            totalprice += milescost;
         }
         void TotalDiscounts() 
         {
@@ -102,7 +106,8 @@ namespace CarRental
             }
 
             totalDiscount = Math.Round((totalprice * discount),2);
-            
+
+            MinusDiscountsTextBox.Text = $"${totalDiscount}";
             totalprice -= totalDiscount;
         }
         
@@ -126,6 +131,7 @@ namespace CarRental
         //EventHandlers-----------------------------------------------------------------------------------------------------
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            
             CalculateTotals();
         }
 
