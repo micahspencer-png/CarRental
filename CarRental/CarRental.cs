@@ -19,7 +19,22 @@ namespace CarRental
         double charges = 0.00;
         void SetDefaults()
         {
-               
+            NameTextBox.Text = "";
+            AddressTextBox.Text = "";
+            CityTextBox.Text = "";
+            StateTextBox.Text = "";
+            ZipcodeTextBox.Text = "";
+            BeginOdometerTextBox.Text = "";
+            EndOdometerTextBox.Text = "";
+            DaysTextBox.Text = "";
+            TotalDistanceTextBox.Text = "";
+            MileageCostTextBox.Text = "";
+            DailyChargeTextBox.Text = "";
+            MinusDiscountsTextBox.Text = "";
+            YouOweTextBox.Text = "";
+            AAADiscount.Checked = false;
+            SeniorDiscount.Checked = false;
+            MilesRadioButton.Checked = true;
         }
         void ValidateInputs() 
         { 
@@ -58,8 +73,16 @@ namespace CarRental
         }
 
         void ExitProgram() 
-        { 
-        
+        {
+            DialogResult results = MessageBox.Show("Do you Wish to Exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (results == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else 
+            {
+                
+            }
         }
         //EventHandlers-----------------------------------------------------------------------------------------------------
         private void CalculateButton_Click(object sender, EventArgs e)
