@@ -64,6 +64,7 @@
             TotalDistanceTextBox = new TextBox();
             groupBox5 = new GroupBox();
             ClearButton = new Button();
+            SubmitButton = new Button();
             ExitButton = new Button();
             SummaryButton = new Button();
             CalculateButton = new Button();
@@ -400,6 +401,7 @@
             // groupBox5
             // 
             groupBox5.Controls.Add(ClearButton);
+            groupBox5.Controls.Add(SubmitButton);
             groupBox5.Controls.Add(ExitButton);
             groupBox5.Controls.Add(SummaryButton);
             groupBox5.Controls.Add(CalculateButton);
@@ -419,9 +421,19 @@
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
+            // SubmitButton
+            // 
+            SubmitButton.Location = new Point(507, 26);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(116, 35);
+            SubmitButton.TabIndex = 3;
+            SubmitButton.Text = "Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += ExitButton_Click;
+            // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(507, 26);
+            ExitButton.Location = new Point(385, 26);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(116, 35);
             ExitButton.TabIndex = 3;
@@ -431,7 +443,7 @@
             // 
             // SummaryButton
             // 
-            SummaryButton.Location = new Point(385, 26);
+            SummaryButton.Location = new Point(629, 26);
             SummaryButton.Name = "SummaryButton";
             SummaryButton.Size = new Size(116, 35);
             SummaryButton.TabIndex = 2;
@@ -515,5 +527,6 @@
         private Label MileageCostLabel;
         private Label DistanceLabel;
         private ComboBox StateComboBox;
+        private Button SubmitButton;
     }
 }

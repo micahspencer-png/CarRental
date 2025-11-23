@@ -51,6 +51,7 @@ namespace CarRental
             AAADiscount.Checked = false;
             SeniorDiscount.Checked = false;
             MilesRadioButton.Checked = true;
+            SubmitButton.Enabled = false;
         }
         void ValidateInputs() 
         {
@@ -265,6 +266,8 @@ namespace CarRental
         }
         void CalculateTotals() 
         {
+            SubmitButton.Enabled = true;
+            totalprice = 0.00;
             DailyCharge();
             MilageCharge();
             TotalDiscounts();
@@ -287,28 +290,35 @@ namespace CarRental
             int min = 0;
             double miles = 0;
             double milescost = 0;
+            double difference = 0;
             
             max = int.Parse(EndOdometerTextBox.Text);
             min = int.Parse(BeginOdometerTextBox.Text);
-            miles = max - min;
+            difference = max - min;
             if (KmRadioButton.Checked == true)
             {
-                KilometersToMiles(miles);
+                KilometersToMiles(difference);
+                difference = miles;
+            }
+            else 
+            {
+                difference = miles;
             }
 
             if (miles <= 200)
             {
                 milescost = 0;
             }
-            else if (201 <= miles && miles <= 500) 
+            else if (201 <= miles && miles <= 500)
             {
                 milescost = miles * 0.12;
             }
-            else if (miles > 500) 
+            else if (miles > 500)
             {
                 milescost = miles * 0.10;
             }
 
+            milescost = Math.Round(milescost, 2);
             TotalDistanceTextBox.Text = $"{miles} mi";
             MileageCostTextBox.Text = $"${milescost}";
             totalprice += milescost;
