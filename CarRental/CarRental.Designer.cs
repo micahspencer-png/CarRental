@@ -429,7 +429,7 @@
             SubmitButton.TabIndex = 3;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
-            SubmitButton.Click += ExitButton_Click;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // ExitButton
             // 

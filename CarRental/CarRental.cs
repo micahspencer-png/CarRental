@@ -273,10 +273,6 @@ namespace CarRental
             TotalDiscounts();
             YouOweTextBox.Text = $"${totalprice}";
         }
-        private double KilometersToMiles(double miles) 
-        {
-            return miles * 0.62;
-        }
         void DailyCharge() 
         {
             double days = double.Parse(DaysTextBox.Text);
@@ -297,12 +293,11 @@ namespace CarRental
             difference = max - min;
             if (KmRadioButton.Checked == true)
             {
-                KilometersToMiles(difference);
-                difference = miles;
+                miles = difference * 0.62;
             }
-            else 
+            else if (MilesRadioButton.Checked == true)
             {
-                difference = miles;
+                miles = difference;
             }
 
             if (miles <= 200)
@@ -379,7 +374,12 @@ namespace CarRental
         {
             ExitProgram();
         }
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            SetDefaults();
+            SummaryButton.Enabled = true;
+            SubmitButton.Enabled = false;
+        }
 
-        
     }
 }
