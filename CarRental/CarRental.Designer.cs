@@ -29,8 +29,16 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            StateLabel = new Label();
+            DaysLabel = new Label();
             DaysTextBox = new TextBox();
+            CityLabel = new Label();
+            EndOdometerLabel = new Label();
             StateTextBox = new TextBox();
+            AddressLabel = new Label();
+            NameLabel = new Label();
+            BeginOdometerLabel = new Label();
+            ZipcodeLabel = new Label();
             ZipcodeTextBox = new TextBox();
             NameTextBox = new TextBox();
             BeginOdometerTextBox = new TextBox();
@@ -44,6 +52,11 @@
             SeniorDiscount = new CheckBox();
             AAADiscount = new CheckBox();
             groupBox4 = new GroupBox();
+            YouOweLabel = new Label();
+            MinusDiscountsLabel = new Label();
+            DailyChargeLabel = new Label();
+            MileageCostLabel = new Label();
+            DistanceLabel = new Label();
             YouOweTextBox = new TextBox();
             MinusDiscountsTextBox = new TextBox();
             DailyChargeTextBox = new TextBox();
@@ -54,19 +67,6 @@
             ExitButton = new Button();
             SummaryButton = new Button();
             CalculateButton = new Button();
-            DistanceLabel = new Label();
-            MileageCostLabel = new Label();
-            DailyChargeLabel = new Label();
-            MinusDiscountsLabel = new Label();
-            ZipcodeLabel = new Label();
-            BeginOdometerLabel = new Label();
-            EndOdometerLabel = new Label();
-            DaysLabel = new Label();
-            NameLabel = new Label();
-            AddressLabel = new Label();
-            CityLabel = new Label();
-            StateLabel = new Label();
-            YouOweLabel = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -99,26 +99,98 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Client Information";
             // 
+            // StateLabel
+            // 
+            StateLabel.AutoSize = true;
+            StateLabel.Location = new Point(37, 138);
+            StateLabel.Name = "StateLabel";
+            StateLabel.Size = new Size(43, 20);
+            StateLabel.TabIndex = 1;
+            StateLabel.Text = "State";
+            // 
+            // DaysLabel
+            // 
+            DaysLabel.AutoSize = true;
+            DaysLabel.Location = new Point(35, 266);
+            DaysLabel.Name = "DaysLabel";
+            DaysLabel.Size = new Size(117, 20);
+            DaysLabel.TabIndex = 1;
+            DaysLabel.Text = "Number of Days";
+            // 
             // DaysTextBox
             // 
             DaysTextBox.Location = new Point(306, 263);
             DaysTextBox.Name = "DaysTextBox";
             DaysTextBox.Size = new Size(92, 27);
-            DaysTextBox.TabIndex = 0;
+            DaysTextBox.TabIndex = 7;
+            // 
+            // CityLabel
+            // 
+            CityLabel.AutoSize = true;
+            CityLabel.Location = new Point(37, 105);
+            CityLabel.Name = "CityLabel";
+            CityLabel.Size = new Size(34, 20);
+            CityLabel.TabIndex = 1;
+            CityLabel.Text = "City";
+            // 
+            // EndOdometerLabel
+            // 
+            EndOdometerLabel.AutoSize = true;
+            EndOdometerLabel.Location = new Point(35, 237);
+            EndOdometerLabel.Name = "EndOdometerLabel";
+            EndOdometerLabel.Size = new Size(186, 20);
+            EndOdometerLabel.TabIndex = 1;
+            EndOdometerLabel.Text = "Ending Odometer Reading";
             // 
             // StateTextBox
             // 
             StateTextBox.Location = new Point(306, 131);
             StateTextBox.Name = "StateTextBox";
             StateTextBox.Size = new Size(92, 27);
-            StateTextBox.TabIndex = 0;
+            StateTextBox.TabIndex = 3;
+            // 
+            // AddressLabel
+            // 
+            AddressLabel.AutoSize = true;
+            AddressLabel.Location = new Point(35, 72);
+            AddressLabel.Name = "AddressLabel";
+            AddressLabel.Size = new Size(62, 20);
+            AddressLabel.TabIndex = 1;
+            AddressLabel.Text = "Address";
+            // 
+            // NameLabel
+            // 
+            NameLabel.AutoSize = true;
+            NameLabel.Location = new Point(35, 37);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(116, 20);
+            NameLabel.TabIndex = 1;
+            NameLabel.Text = "Customer Name";
+            // 
+            // BeginOdometerLabel
+            // 
+            BeginOdometerLabel.AutoSize = true;
+            BeginOdometerLabel.Location = new Point(35, 204);
+            BeginOdometerLabel.Name = "BeginOdometerLabel";
+            BeginOdometerLabel.Size = new Size(207, 20);
+            BeginOdometerLabel.TabIndex = 1;
+            BeginOdometerLabel.Text = "Beginning Odometer Reading";
+            // 
+            // ZipcodeLabel
+            // 
+            ZipcodeLabel.AutoSize = true;
+            ZipcodeLabel.Location = new Point(37, 171);
+            ZipcodeLabel.Name = "ZipcodeLabel";
+            ZipcodeLabel.Size = new Size(70, 20);
+            ZipcodeLabel.TabIndex = 1;
+            ZipcodeLabel.Text = "Zip Code";
             // 
             // ZipcodeTextBox
             // 
             ZipcodeTextBox.Location = new Point(306, 164);
             ZipcodeTextBox.Name = "ZipcodeTextBox";
             ZipcodeTextBox.Size = new Size(92, 27);
-            ZipcodeTextBox.TabIndex = 0;
+            ZipcodeTextBox.TabIndex = 4;
             // 
             // NameTextBox
             // 
@@ -132,28 +204,28 @@
             BeginOdometerTextBox.Location = new Point(262, 197);
             BeginOdometerTextBox.Name = "BeginOdometerTextBox";
             BeginOdometerTextBox.Size = new Size(136, 27);
-            BeginOdometerTextBox.TabIndex = 0;
+            BeginOdometerTextBox.TabIndex = 5;
             // 
             // EndOdometerTextBox
             // 
             EndOdometerTextBox.Location = new Point(262, 230);
             EndOdometerTextBox.Name = "EndOdometerTextBox";
             EndOdometerTextBox.Size = new Size(136, 27);
-            EndOdometerTextBox.TabIndex = 0;
+            EndOdometerTextBox.TabIndex = 6;
             // 
             // AddressTextBox
             // 
             AddressTextBox.Location = new Point(196, 65);
             AddressTextBox.Name = "AddressTextBox";
             AddressTextBox.Size = new Size(202, 27);
-            AddressTextBox.TabIndex = 0;
+            AddressTextBox.TabIndex = 1;
             // 
             // CityTextBox
             // 
             CityTextBox.Location = new Point(196, 98);
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(202, 27);
-            CityTextBox.TabIndex = 0;
+            CityTextBox.TabIndex = 2;
             // 
             // groupBox2
             // 
@@ -172,7 +244,7 @@
             KmRadioButton.Location = new Point(6, 67);
             KmRadioButton.Name = "KmRadioButton";
             KmRadioButton.Size = new Size(101, 24);
-            KmRadioButton.TabIndex = 0;
+            KmRadioButton.TabIndex = 1;
             KmRadioButton.TabStop = true;
             KmRadioButton.Text = "Kilometers";
             KmRadioButton.UseVisualStyleBackColor = true;
@@ -205,7 +277,7 @@
             SeniorDiscount.Location = new Point(20, 73);
             SeniorDiscount.Name = "SeniorDiscount";
             SeniorDiscount.Size = new Size(184, 24);
-            SeniorDiscount.TabIndex = 0;
+            SeniorDiscount.TabIndex = 1;
             SeniorDiscount.Text = "Senior Citizen Discount";
             SeniorDiscount.UseVisualStyleBackColor = true;
             // 
@@ -237,6 +309,51 @@
             groupBox4.TabIndex = 3;
             groupBox4.TabStop = false;
             groupBox4.Text = "Cost Summary";
+            // 
+            // YouOweLabel
+            // 
+            YouOweLabel.AutoSize = true;
+            YouOweLabel.Location = new Point(26, 213);
+            YouOweLabel.Name = "YouOweLabel";
+            YouOweLabel.Size = new Size(67, 20);
+            YouOweLabel.TabIndex = 1;
+            YouOweLabel.Text = "You Owe";
+            // 
+            // MinusDiscountsLabel
+            // 
+            MinusDiscountsLabel.AutoSize = true;
+            MinusDiscountsLabel.Location = new Point(26, 167);
+            MinusDiscountsLabel.Name = "MinusDiscountsLabel";
+            MinusDiscountsLabel.Size = new Size(116, 20);
+            MinusDiscountsLabel.TabIndex = 1;
+            MinusDiscountsLabel.Text = "Minus Discounts";
+            // 
+            // DailyChargeLabel
+            // 
+            DailyChargeLabel.AutoSize = true;
+            DailyChargeLabel.Location = new Point(26, 123);
+            DailyChargeLabel.Name = "DailyChargeLabel";
+            DailyChargeLabel.Size = new Size(94, 20);
+            DailyChargeLabel.TabIndex = 1;
+            DailyChargeLabel.Text = "Daily Charge";
+            // 
+            // MileageCostLabel
+            // 
+            MileageCostLabel.AutoSize = true;
+            MileageCostLabel.Location = new Point(26, 84);
+            MileageCostLabel.Name = "MileageCostLabel";
+            MileageCostLabel.Size = new Size(114, 20);
+            MileageCostLabel.TabIndex = 1;
+            MileageCostLabel.Text = "Mileage Charge";
+            // 
+            // DistanceLabel
+            // 
+            DistanceLabel.AutoSize = true;
+            DistanceLabel.Location = new Point(26, 51);
+            DistanceLabel.Name = "DistanceLabel";
+            DistanceLabel.Size = new Size(167, 20);
+            DistanceLabel.TabIndex = 1;
+            DistanceLabel.Text = "Total Distance Travelled";
             // 
             // YouOweTextBox
             // 
@@ -295,27 +412,30 @@
             ClearButton.Location = new Point(263, 26);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(116, 35);
-            ClearButton.TabIndex = 0;
+            ClearButton.TabIndex = 1;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // ExitButton
             // 
             ExitButton.Location = new Point(507, 26);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(116, 35);
-            ExitButton.TabIndex = 0;
+            ExitButton.TabIndex = 3;
             ExitButton.Text = "E&xit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // SummaryButton
             // 
             SummaryButton.Location = new Point(385, 26);
             SummaryButton.Name = "SummaryButton";
             SummaryButton.Size = new Size(116, 35);
-            SummaryButton.TabIndex = 0;
+            SummaryButton.TabIndex = 2;
             SummaryButton.Text = "&Summary";
             SummaryButton.UseVisualStyleBackColor = true;
+            SummaryButton.Click += SummaryButton_Click;
             // 
             // CalculateButton
             // 
@@ -326,123 +446,6 @@
             CalculateButton.Text = "Ca&lculate";
             CalculateButton.UseVisualStyleBackColor = true;
             CalculateButton.Click += CalculateButton_Click;
-            // 
-            // DistanceLabel
-            // 
-            DistanceLabel.AutoSize = true;
-            DistanceLabel.Location = new Point(26, 51);
-            DistanceLabel.Name = "DistanceLabel";
-            DistanceLabel.Size = new Size(167, 20);
-            DistanceLabel.TabIndex = 1;
-            DistanceLabel.Text = "Total Distance Travelled";
-            // 
-            // MileageCostLabel
-            // 
-            MileageCostLabel.AutoSize = true;
-            MileageCostLabel.Location = new Point(26, 84);
-            MileageCostLabel.Name = "MileageCostLabel";
-            MileageCostLabel.Size = new Size(114, 20);
-            MileageCostLabel.TabIndex = 1;
-            MileageCostLabel.Text = "Mileage Charge";
-            // 
-            // DailyChargeLabel
-            // 
-            DailyChargeLabel.AutoSize = true;
-            DailyChargeLabel.Location = new Point(26, 123);
-            DailyChargeLabel.Name = "DailyChargeLabel";
-            DailyChargeLabel.Size = new Size(94, 20);
-            DailyChargeLabel.TabIndex = 1;
-            DailyChargeLabel.Text = "Daily Charge";
-            // 
-            // MinusDiscountsLabel
-            // 
-            MinusDiscountsLabel.AutoSize = true;
-            MinusDiscountsLabel.Location = new Point(26, 167);
-            MinusDiscountsLabel.Name = "MinusDiscountsLabel";
-            MinusDiscountsLabel.Size = new Size(116, 20);
-            MinusDiscountsLabel.TabIndex = 1;
-            MinusDiscountsLabel.Text = "Minus Discounts";
-            // 
-            // ZipcodeLabel
-            // 
-            ZipcodeLabel.AutoSize = true;
-            ZipcodeLabel.Location = new Point(37, 171);
-            ZipcodeLabel.Name = "ZipcodeLabel";
-            ZipcodeLabel.Size = new Size(70, 20);
-            ZipcodeLabel.TabIndex = 1;
-            ZipcodeLabel.Text = "Zip Code";
-            // 
-            // BeginOdometerLabel
-            // 
-            BeginOdometerLabel.AutoSize = true;
-            BeginOdometerLabel.Location = new Point(35, 204);
-            BeginOdometerLabel.Name = "BeginOdometerLabel";
-            BeginOdometerLabel.Size = new Size(207, 20);
-            BeginOdometerLabel.TabIndex = 1;
-            BeginOdometerLabel.Text = "Beginning Odometer Reading";
-            // 
-            // EndOdometerLabel
-            // 
-            EndOdometerLabel.AutoSize = true;
-            EndOdometerLabel.Location = new Point(35, 237);
-            EndOdometerLabel.Name = "EndOdometerLabel";
-            EndOdometerLabel.Size = new Size(186, 20);
-            EndOdometerLabel.TabIndex = 1;
-            EndOdometerLabel.Text = "Ending Odometer Reading";
-            // 
-            // DaysLabel
-            // 
-            DaysLabel.AutoSize = true;
-            DaysLabel.Location = new Point(35, 266);
-            DaysLabel.Name = "DaysLabel";
-            DaysLabel.Size = new Size(117, 20);
-            DaysLabel.TabIndex = 1;
-            DaysLabel.Text = "Number of Days";
-            // 
-            // NameLabel
-            // 
-            NameLabel.AutoSize = true;
-            NameLabel.Location = new Point(35, 37);
-            NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(116, 20);
-            NameLabel.TabIndex = 1;
-            NameLabel.Text = "Customer Name";
-            // 
-            // AddressLabel
-            // 
-            AddressLabel.AutoSize = true;
-            AddressLabel.Location = new Point(35, 72);
-            AddressLabel.Name = "AddressLabel";
-            AddressLabel.Size = new Size(62, 20);
-            AddressLabel.TabIndex = 1;
-            AddressLabel.Text = "Address";
-            // 
-            // CityLabel
-            // 
-            CityLabel.AutoSize = true;
-            CityLabel.Location = new Point(37, 105);
-            CityLabel.Name = "CityLabel";
-            CityLabel.Size = new Size(34, 20);
-            CityLabel.TabIndex = 1;
-            CityLabel.Text = "City";
-            // 
-            // StateLabel
-            // 
-            StateLabel.AutoSize = true;
-            StateLabel.Location = new Point(37, 138);
-            StateLabel.Name = "StateLabel";
-            StateLabel.Size = new Size(43, 20);
-            StateLabel.TabIndex = 1;
-            StateLabel.Text = "State";
-            // 
-            // YouOweLabel
-            // 
-            YouOweLabel.AutoSize = true;
-            YouOweLabel.Location = new Point(26, 213);
-            YouOweLabel.Name = "YouOweLabel";
-            YouOweLabel.Size = new Size(67, 20);
-            YouOweLabel.TabIndex = 1;
-            YouOweLabel.Text = "You Owe";
             // 
             // CarRental
             // 
