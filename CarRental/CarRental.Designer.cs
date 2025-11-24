@@ -427,7 +427,7 @@
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(116, 35);
             SubmitButton.TabIndex = 3;
-            SubmitButton.Text = "Submit";
+            SubmitButton.Text = "Submit Rental";
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 

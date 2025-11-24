@@ -19,10 +19,10 @@ namespace CarRental
         //ProgramLogic------------------------------------------------------------------------------------------------------
 
         int customers = 0;
-        double miles = 0.00;
+        double mileage = 0.00;
         double charges = 0.00;
         double totalprice = 0.00;
-
+        double totalmiles = 0.00;
         
         bool NameValid;
         bool AddressValid;
@@ -271,6 +271,7 @@ namespace CarRental
             DailyCharge();
             MilageCharge();
             TotalDiscounts();
+            totalprice = Math.Round(totalprice, 2);
             YouOweTextBox.Text = $"${totalprice}";
         }
         void DailyCharge() 
@@ -312,7 +313,7 @@ namespace CarRental
             {
                 milescost = miles * 0.10;
             }
-
+            mileage = miles;
             milescost = Math.Round(milescost, 2);
             TotalDistanceTextBox.Text = $"{miles} mi";
             MileageCostTextBox.Text = $"${milescost}";
@@ -336,10 +337,23 @@ namespace CarRental
             MinusDiscountsTextBox.Text = $"${totalDiscount}";
             totalprice -= totalDiscount;
         }
+
+        void SubmitData() 
+        {
+            customers += 1;
+            totalmiles += mileage;
+            totalmiles = Math.Round(totalmiles, 2);
+            charges += totalprice;
+            charges = Math.Round(charges, 2);
+        }
         
         void Summary() 
-        { 
-            
+        {
+            string Summary = "";
+            Summary += $"Number of Customers:   {customers}\n";
+            Summary += $"Total Miles Driven:    {totalmiles} miles\n";
+            Summary += $"Total Charges:     ${charges}\n";
+            MessageBox.Show($"{Summary}", "Customer Summary");
         }
 
         void ExitProgram() 
@@ -376,7 +390,12 @@ namespace CarRental
         }
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            SetDefaults();
+            SubmitData();
+            TotalDistanceTextBox.Text = "";
+            MileageCostTextBox.Text = "";
+            DailyChargeTextBox.Text = "";
+            MinusDiscountsTextBox.Text = "";
+            YouOweTextBox.Text = "";
             SummaryButton.Enabled = true;
             SubmitButton.Enabled = false;
         }
