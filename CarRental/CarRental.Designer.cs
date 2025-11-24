@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
             StateComboBox = new ComboBox();
             StateLabel = new Label();
@@ -68,6 +69,7 @@
             ExitButton = new Button();
             SummaryButton = new Button();
             CalculateButton = new Button();
+            toolTip1 = new ToolTip(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -95,7 +97,7 @@
             groupBox1.Controls.Add(CityTextBox);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(404, 334);
+            groupBox1.Size = new Size(434, 332);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Client Information";
@@ -104,10 +106,11 @@
             // 
             StateComboBox.FormattingEnabled = true;
             StateComboBox.Items.AddRange(new object[] { "", "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" });
-            StateComboBox.Location = new Point(294, 131);
+            StateComboBox.Location = new Point(275, 131);
             StateComboBox.Name = "StateComboBox";
-            StateComboBox.Size = new Size(104, 28);
+            StateComboBox.Size = new Size(123, 28);
             StateComboBox.TabIndex = 5;
+            StateComboBox.Text = "(Select State)";
             // 
             // StateLabel
             // 
@@ -234,7 +237,7 @@
             // 
             groupBox2.Controls.Add(KmRadioButton);
             groupBox2.Controls.Add(MilesRadioButton);
-            groupBox2.Location = new Point(12, 352);
+            groupBox2.Location = new Point(12, 372);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(404, 104);
             groupBox2.TabIndex = 1;
@@ -267,7 +270,7 @@
             // 
             groupBox3.Controls.Add(SeniorDiscount);
             groupBox3.Controls.Add(AAADiscount);
-            groupBox3.Location = new Point(422, 299);
+            groupBox3.Location = new Point(470, 328);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(408, 105);
             groupBox3.TabIndex = 2;
@@ -306,7 +309,7 @@
             groupBox4.Controls.Add(DailyChargeTextBox);
             groupBox4.Controls.Add(MileageCostTextBox);
             groupBox4.Controls.Add(TotalDistanceTextBox);
-            groupBox4.Location = new Point(422, 16);
+            groupBox4.Location = new Point(452, 12);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(426, 262);
             groupBox4.TabIndex = 3;
@@ -405,7 +408,7 @@
             groupBox5.Controls.Add(ExitButton);
             groupBox5.Controls.Add(SummaryButton);
             groupBox5.Controls.Add(CalculateButton);
-            groupBox5.Location = new Point(24, 452);
+            groupBox5.Location = new Point(28, 500);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(802, 76);
             groupBox5.TabIndex = 4;
@@ -465,7 +468,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 540);
+            ClientSize = new Size(907, 588);
             Controls.Add(groupBox5);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
@@ -528,5 +531,6 @@
         private Label DistanceLabel;
         private ComboBox StateComboBox;
         private Button SubmitButton;
+        private ToolTip toolTip1;
     }
 }

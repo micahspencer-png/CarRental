@@ -188,7 +188,11 @@ namespace CarRental
                 Error();
             }
         }
-
+        private double KilometerToMiles(ref double difference) 
+        {
+            difference = Math.Round((difference * 0.62), 2);
+            return difference;
+        }
         void Error() 
         {
             string message = "";
@@ -292,14 +296,19 @@ namespace CarRental
             max = int.Parse(EndOdometerTextBox.Text);
             min = int.Parse(BeginOdometerTextBox.Text);
             difference = max - min;
+            
             if (KmRadioButton.Checked == true)
             {
-                miles = difference * 0.62;
+                
+                KilometerToMiles(ref difference);
+                miles = difference;
             }
-            else if (MilesRadioButton.Checked == true)
+
+            else 
             {
                 miles = difference;
             }
+
 
             if (miles <= 200)
             {
@@ -395,6 +404,9 @@ namespace CarRental
             MileageCostTextBox.Text = "";
             DailyChargeTextBox.Text = "";
             MinusDiscountsTextBox.Text = "";
+            BeginOdometerTextBox.Text = "";
+            EndOdometerTextBox.Text = "";
+            DaysTextBox.Text = "";
             YouOweTextBox.Text = "";
             SummaryButton.Enabled = true;
             SubmitButton.Enabled = false;
