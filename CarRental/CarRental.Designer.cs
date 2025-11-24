@@ -111,6 +111,7 @@
             StateComboBox.Size = new Size(123, 28);
             StateComboBox.TabIndex = 5;
             StateComboBox.Text = "(Select State)";
+            toolTip1.SetToolTip(StateComboBox, "Select the State that You are Living in");
             // 
             // StateLabel
             // 
@@ -136,6 +137,7 @@
             DaysTextBox.Name = "DaysTextBox";
             DaysTextBox.Size = new Size(92, 27);
             DaysTextBox.TabIndex = 7;
+            toolTip1.SetToolTip(DaysTextBox, "Input Number of Days You Had the Car");
             // 
             // CityLabel
             // 
@@ -197,6 +199,7 @@
             ZipcodeTextBox.Name = "ZipcodeTextBox";
             ZipcodeTextBox.Size = new Size(92, 27);
             ZipcodeTextBox.TabIndex = 4;
+            toolTip1.SetToolTip(ZipcodeTextBox, "Type the Zipcode of your Address");
             // 
             // NameTextBox
             // 
@@ -204,6 +207,7 @@
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(202, 27);
             NameTextBox.TabIndex = 0;
+            toolTip1.SetToolTip(NameTextBox, "Type your Full Name Here");
             // 
             // BeginOdometerTextBox
             // 
@@ -211,6 +215,7 @@
             BeginOdometerTextBox.Name = "BeginOdometerTextBox";
             BeginOdometerTextBox.Size = new Size(136, 27);
             BeginOdometerTextBox.TabIndex = 5;
+            toolTip1.SetToolTip(BeginOdometerTextBox, "Input Odometer Reading before Leaving");
             // 
             // EndOdometerTextBox
             // 
@@ -218,6 +223,7 @@
             EndOdometerTextBox.Name = "EndOdometerTextBox";
             EndOdometerTextBox.Size = new Size(136, 27);
             EndOdometerTextBox.TabIndex = 6;
+            toolTip1.SetToolTip(EndOdometerTextBox, "Input Odometer Reading after Returning");
             // 
             // AddressTextBox
             // 
@@ -225,6 +231,7 @@
             AddressTextBox.Name = "AddressTextBox";
             AddressTextBox.Size = new Size(202, 27);
             AddressTextBox.TabIndex = 1;
+            toolTip1.SetToolTip(AddressTextBox, "Type your Address Here");
             // 
             // CityTextBox
             // 
@@ -232,6 +239,7 @@
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(202, 27);
             CityTextBox.TabIndex = 2;
+            toolTip1.SetToolTip(CityTextBox, "Type the City that You are Living In Here");
             // 
             // groupBox2
             // 
@@ -253,6 +261,7 @@
             KmRadioButton.TabIndex = 1;
             KmRadioButton.TabStop = true;
             KmRadioButton.Text = "Kilometers";
+            toolTip1.SetToolTip(KmRadioButton, "Changes the Odometer to Kilometers");
             KmRadioButton.UseVisualStyleBackColor = true;
             // 
             // MilesRadioButton
@@ -264,6 +273,7 @@
             MilesRadioButton.TabIndex = 0;
             MilesRadioButton.TabStop = true;
             MilesRadioButton.Text = "Miles";
+            toolTip1.SetToolTip(MilesRadioButton, "Changes the Odometer to Miles");
             MilesRadioButton.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -285,6 +295,7 @@
             SeniorDiscount.Size = new Size(184, 24);
             SeniorDiscount.TabIndex = 1;
             SeniorDiscount.Text = "Senior Citizen Discount";
+            toolTip1.SetToolTip(SeniorDiscount, "Applies a 3% Senior Citizen Discount");
             SeniorDiscount.UseVisualStyleBackColor = true;
             // 
             // AAADiscount
@@ -295,6 +306,7 @@
             AAADiscount.Size = new Size(183, 24);
             AAADiscount.TabIndex = 0;
             AAADiscount.Text = "AAA Member Discount";
+            toolTip1.SetToolTip(AAADiscount, "Applies a 5% AAA Discount");
             AAADiscount.UseVisualStyleBackColor = true;
             // 
             // groupBox4
@@ -368,6 +380,7 @@
             YouOweTextBox.ReadOnly = true;
             YouOweTextBox.Size = new Size(180, 27);
             YouOweTextBox.TabIndex = 0;
+            toolTip1.SetToolTip(YouOweTextBox, "Shows the Total Owed");
             // 
             // MinusDiscountsTextBox
             // 
@@ -376,6 +389,7 @@
             MinusDiscountsTextBox.ReadOnly = true;
             MinusDiscountsTextBox.Size = new Size(180, 27);
             MinusDiscountsTextBox.TabIndex = 0;
+            toolTip1.SetToolTip(MinusDiscountsTextBox, "Shows Total Savings from Discounts");
             // 
             // DailyChargeTextBox
             // 
@@ -384,6 +398,7 @@
             DailyChargeTextBox.ReadOnly = true;
             DailyChargeTextBox.Size = new Size(180, 27);
             DailyChargeTextBox.TabIndex = 0;
+            toolTip1.SetToolTip(DailyChargeTextBox, "Shows the Daily Charge");
             // 
             // MileageCostTextBox
             // 
@@ -392,6 +407,7 @@
             MileageCostTextBox.ReadOnly = true;
             MileageCostTextBox.Size = new Size(180, 27);
             MileageCostTextBox.TabIndex = 0;
+            toolTip1.SetToolTip(MileageCostTextBox, "Shows Total Cost of Mileage");
             // 
             // TotalDistanceTextBox
             // 
@@ -400,6 +416,7 @@
             TotalDistanceTextBox.ReadOnly = true;
             TotalDistanceTextBox.Size = new Size(180, 27);
             TotalDistanceTextBox.TabIndex = 0;
+            toolTip1.SetToolTip(TotalDistanceTextBox, "Shows Total Distance in Miles");
             // 
             // groupBox5
             // 
@@ -421,6 +438,7 @@
             ClearButton.Size = new Size(116, 35);
             ClearButton.TabIndex = 1;
             ClearButton.Text = "&Clear";
+            toolTip1.SetToolTip(ClearButton, "Clears the TextBoxes");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -431,6 +449,7 @@
             SubmitButton.Size = new Size(116, 35);
             SubmitButton.TabIndex = 3;
             SubmitButton.Text = "Submit Rental";
+            toolTip1.SetToolTip(SubmitButton, "Submits the Total Values for The Summary");
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
@@ -441,6 +460,7 @@
             ExitButton.Size = new Size(116, 35);
             ExitButton.TabIndex = 3;
             ExitButton.Text = "E&xit";
+            toolTip1.SetToolTip(ExitButton, "Closes the Program");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -451,6 +471,7 @@
             SummaryButton.Size = new Size(116, 35);
             SummaryButton.TabIndex = 2;
             SummaryButton.Text = "&Summary";
+            toolTip1.SetToolTip(SummaryButton, "Displays the Total Values");
             SummaryButton.UseVisualStyleBackColor = true;
             SummaryButton.Click += SummaryButton_Click;
             // 
@@ -461,6 +482,7 @@
             CalculateButton.Size = new Size(116, 35);
             CalculateButton.TabIndex = 0;
             CalculateButton.Text = "Ca&lculate";
+            toolTip1.SetToolTip(CalculateButton, "Calculates the Total Cost ");
             CalculateButton.UseVisualStyleBackColor = true;
             CalculateButton.Click += CalculateButton_Click;
             // 

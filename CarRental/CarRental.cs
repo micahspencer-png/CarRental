@@ -15,6 +15,7 @@ namespace CarRental
         {
             InitializeComponent();
             SetDefaults();
+            SummaryButton.Enabled = false;
         }
         //ProgramLogic------------------------------------------------------------------------------------------------------
 
@@ -35,6 +36,7 @@ namespace CarRental
         bool DaysValid;
         void SetDefaults()
         {
+            //sets the default state as empty textboxes
             NameTextBox.Text = "";
             AddressTextBox.Text = "";
             CityTextBox.Text = "";
@@ -55,6 +57,7 @@ namespace CarRental
         }
         void ValidateInputs() 
         {
+            //sets all variables as correct, then changes them if they are actually incorrect
             int end = 0;
             int begin = 0;
             NameTextBox.BackColor = Color.White;
@@ -65,6 +68,7 @@ namespace CarRental
             BeginOdometerTextBox.BackColor = Color.White;
             EndOdometerTextBox.BackColor = Color.White;
             DaysTextBox.BackColor = Color.White;
+            
             bool allFieldsAreValid = true;
             bool nameValid = true;
             bool addressValid = true;
@@ -76,6 +80,7 @@ namespace CarRental
             bool odometerValid = true;
             bool daysValid = true;
 
+            //will validate as long as the boxes aren't empty
             if (NameTextBox.Text == "")
             {
                 allFieldsAreValid = false;
@@ -97,6 +102,7 @@ namespace CarRental
                 cityValid = false;
             }
 
+            //will validate as long as a state is selected
             if (StateComboBox.SelectedIndex == 0) 
             { 
                 allFieldsAreValid = false;
@@ -104,6 +110,7 @@ namespace CarRental
                 stateValid = false;
             }
 
+            //will validate as long as the values are numbers, not strings
             try
             {
                 int zip = int.Parse(ZipcodeTextBox.Text); 
@@ -141,7 +148,7 @@ namespace CarRental
                 endodometerValid = false;
 
             }
-
+            //runs a comparison so that the end odometer reading can't be below beginning odometer reading
             if (end < begin)
             {
                 allFieldsAreValid = false;
@@ -167,7 +174,7 @@ namespace CarRental
                 daysValid = false;
             }
 
-             
+             //sets global variables so that the error function knows what specifically is invalid
              NameValid = nameValid;
              AddressValid = addressValid;
              CityValid = cityValid;
@@ -178,7 +185,7 @@ namespace CarRental
              OdometerValid = odometerValid;
              DaysValid = daysValid;
 
-
+            //runs calculations if everything is valid and displays error message if it isn't
             if (allFieldsAreValid == true)
             {
                 CalculateTotals();
@@ -190,11 +197,13 @@ namespace CarRental
         }
         private double KilometerToMiles(ref double difference) 
         {
+            //converts the odometer difference to miles if km was selected
             difference = Math.Round((difference * 0.62), 2);
             return difference;
         }
         void Error() 
         {
+            //this section tells user what is wrong with the validation in a message box and clears the incorrect data, 
             string message = "";
             if (DaysValid == false)
             {
@@ -270,17 +279,20 @@ namespace CarRental
         }
         void CalculateTotals() 
         {
+            //clears any previous calculations and then calculates new totals
             SubmitButton.Enabled = true;
             totalprice = 0.00;
             DailyCharge();
             MilageCharge();
             TotalDiscounts();
             totalprice = Math.Round(totalprice, 2);
+            //displays total in text box
             YouOweTextBox.Text = $"${totalprice}";
         }
         void DailyCharge() 
         {
             double days = double.Parse(DaysTextBox.Text);
+            // sets the daily charge to $15 and adds it to total price
             double dayscost = Math.Round((15.00 * days), 2);
             totalprice += dayscost;
             DailyChargeTextBox.Text = $"$ {dayscost}";
@@ -293,62 +305,76 @@ namespace CarRental
             double milescost = 0;
             double difference = 0;
             
+            //gets the difference on the odometer
             max = int.Parse(EndOdometerTextBox.Text);
             min = int.Parse(BeginOdometerTextBox.Text);
             difference = max - min;
             
             if (KmRadioButton.Checked == true)
             {
-                
+                //runs km to mi converter
                 KilometerToMiles(ref difference);
                 miles = difference;
             }
-
             else 
             {
                 miles = difference;
             }
 
-
+            //sets 0-200 miles as free
             if (miles <= 200)
             {
                 milescost = 0;
             }
+            //sets 201-500 miles as $0.12 per mile
             else if (201 <= miles && miles <= 500)
             {
                 milescost = miles * 0.12;
             }
+            //sets 500+ miles as $0.10 per mile
             else if (miles > 500)
             {
                 milescost = miles * 0.10;
             }
+
+            //sets the total miles for the summary
             mileage = miles;
+
             milescost = Math.Round(milescost, 2);
+            //displays the total number of miles and the total mileage cost
             TotalDistanceTextBox.Text = $"{miles} mi";
             MileageCostTextBox.Text = $"${milescost}";
+            //adds mileage cost to total price
             totalprice += milescost;
         }
         void TotalDiscounts() 
         {
             double discount = 0;
             double totalDiscount = 0;
+            
+            //adds a 5% discount if there is an AAA membership
             if (AAADiscount.Checked == true) 
             {
                 discount += 0.05;
             }
+
+            //adds a 3% discount if user is a senior citizen
             if (SeniorDiscount.Checked == true) 
             {
                 discount += 0.03;
             }
 
+            //calculates the total savings
             totalDiscount = Math.Round((totalprice * discount),2);
-
+            //displays the total savings
             MinusDiscountsTextBox.Text = $"${totalDiscount}";
+            //removes the savings from the total price
             totalprice -= totalDiscount;
         }
 
         void SubmitData() 
         {
+            //saves the number of customers, total miles, and total charges for the summary to pull up
             customers += 1;
             totalmiles += mileage;
             totalmiles = Math.Round(totalmiles, 2);
@@ -358,48 +384,60 @@ namespace CarRental
         
         void Summary() 
         {
+            //creates a string that holds all of the data
             string Summary = "";
-            Summary += $"Number of Customers:   {customers}\n";
-            Summary += $"Total Miles Driven:    {totalmiles} miles\n";
-            Summary += $"Total Charges:     ${charges}\n";
+            Summary += $"Number of Customers:     {customers}     \n";
+            Summary += $"Total Miles Driven:       {totalmiles} miles      \n";
+            Summary += $"Total Charges:         ${charges}      \n";
+
+            //creates a message box that shows the total saved data
             MessageBox.Show($"{Summary}", "Customer Summary");
         }
 
         void ExitProgram() 
         {
+            //creates a messagebox that prompts the user
             DialogResult results = MessageBox.Show("Do you Wish to Exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (results == DialogResult.Yes)
             {
+                //closes program on "yes"
                 this.Close();
             }
             else 
             {
-                
+                //keeps program running and closes the message box on "no"
             }
         }
         //EventHandlers-----------------------------------------------------------------------------------------------------
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            //checks the inputs for any problems then calculates the cost
             ValidateInputs();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            //sets the default data in the text boxes, but doesn't reset the summary
             SetDefaults();
         }
 
         private void SummaryButton_Click(object sender, EventArgs e)
         {
+            //displays summary message box
             Summary();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            //runs message box to leave program
             ExitProgram();
         }
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+            //submits needed data to summary
             SubmitData();
+
+            //clears output display to show that it is a new customer
             TotalDistanceTextBox.Text = "";
             MileageCostTextBox.Text = "";
             DailyChargeTextBox.Text = "";
@@ -408,6 +446,8 @@ namespace CarRental
             EndOdometerTextBox.Text = "";
             DaysTextBox.Text = "";
             YouOweTextBox.Text = "";
+            
+            //enables summary button and doesn't allow a second submit
             SummaryButton.Enabled = true;
             SubmitButton.Enabled = false;
         }
